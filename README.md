@@ -1,8 +1,4 @@
-# Spam Email Detection Using Logistic Regression and TF-IDF
-
-## Project Overview
-
-This project aims to classify email messages as spam or ham (non-spam) using a Logistic Regression model and Term Frequency-Inverse Document Frequency (TF-IDF) for feature extraction. The dataset used is a collection of SMS messages, and the objective is to build an effective classifier for spam detection.
+ollection of SMS messages, and the objective is to build an effective classifier for spam detection.
 
 ### Key Features
 
