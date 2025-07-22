@@ -1,77 +1,131 @@
-# 📧 Spam Email Detection Using Logistic Regression and TF-IDF
+# 📧 Spam Email Detection using Logistic Regression & TF-IDF
 
-## 📝 Project Overview
+## 🚀 Project Overview
 
-This project focuses on building a **spam email classifier** using **Logistic Regression** and **TF-IDF (Term Frequency–Inverse Document Frequency)** for feature extraction. The dataset consists of SMS messages labeled as **spam** or **ham (non-spam)**. The goal is to develop a robust model that can accurately detect and filter out spam messages.
+This project focuses on detecting **spam emails** using **Logistic Regression** and **TF-IDF (Term Frequency-Inverse Document Frequency)** vectorization. It uses a labeled dataset of SMS messages and applies machine learning techniques to classify messages as either "Spam" or "Ham" (non-spam).
 
----
+## 🧠 Key Concepts
 
-## 🔍 Key Features
-
-* **📂 Data Preprocessing**
-
-  * Handles missing values
-  * Renames columns for clarity
-  * Converts categorical labels (spam/ham) into numerical format (1/0)
-
-* **🔡 Feature Extraction**
-
-  * Uses **TF-IDF Vectorizer** to transform text into numerical features for model consumption
-
-* **🤖 Model Training**
-
-  * Applies **Logistic Regression** for binary classification (spam vs. ham)
-
-* **📊 Model Evaluation**
-
-  * Evaluates model using:
-
-    * Accuracy Score
-    * Confusion Matrix
-    * Visualization techniques for better interpretability
+* Natural Language Processing (NLP)
+* Text Preprocessing
+* TF-IDF Vectorization
+* Logistic Regression Classification
+* Data Visualization
+* Model Evaluation Metrics
 
 ---
 
-## 📈 Visualizations
+## 📂 Dataset
 
-The project includes several visualizations for understanding the data distribution and evaluating the model’s performance:
+The dataset is a CSV file (`spam.csv`) which contains the following columns:
 
-### 1. 📊 Distribution of Emails
+* `v1`: Category (spam or ham)
+* `v2`: Message text
 
-Visual representation of class balance in the dataset:
+Unnecessary columns are removed, and the relevant columns are renamed to:
 
-* **Bar Plot**: Shows count of spam vs. ham messages
-* **Pie Chart**: Displays proportion (%) of spam vs. ham messages
-
-### 2. 🔁 Confusion Matrix
-
-Illustrates the classifier's performance:
-
-* **True Positives (TP)**: Spam correctly predicted as spam
-* **True Negatives (TN)**: Ham correctly predicted as ham
-* **False Positives (FP)**: Ham misclassified as spam
-* **False Negatives (FN)**: Spam misclassified as ham
-
-### 3. 🧞 Top Words in Spam Emails
-
-* **Bar Chart** displaying the most common and frequent words found in spam messages
-* Helps in uncovering recurring keywords typical of spam patterns
+* `Category`: Converted to 0 (spam) and 1 (ham)
+* `Message`: The actual message content
 
 ---
 
-## 📂 Technologies Used
+## 🛠️ Technologies Used
 
-* Python 🐍
-* Pandas, NumPy – Data Manipulation
-* Scikit-learn – Model Building and Evaluation
-* Matplotlib, Seaborn – Visualization
-* TF-IDF Vectorizer – Feature Engineering
-* Jupyter Notebook – Development Environment
+* Python
+* Pandas & NumPy
+* Scikit-learn
+* NLTK (Stopwords)
+* Matplotlib & Seaborn (Visualizations)
 
 ---
 
-## ✅ Final Thoughts
+## 📊 Data Visualization
 
-This project demonstrates how classical machine learning models like Logistic Regression, when combined with smart text feature engineering (TF-IDF), can perform well for binary classification tasks such as spam detection. It's a great entry point for NLP tasks and spam filtering systems.
+* **Bar Chart**: Distribution of spam vs. ham messages
+* **Pie Chart**: Proportion of spam and ham messages
+* **Confusion Matrix**: Model performance visualization
+* **Top Words**: Most common words in spam messages (excluding stopwords)
 
+---
+
+## 📈 Model Pipeline
+
+1. **Data Preprocessing**
+
+   * Drop unnecessary columns
+   * Encode labels (`spam`: 0, `ham`: 1)
+   * Handle null values (if any)
+
+2. **Data Splitting**
+
+   * Train-Test split using `train_test_split()`
+
+3. **Vectorization**
+
+   * Text transformed to numerical features using **TF-IDF**
+
+4. **Model Training**
+
+   * Classifier: **Logistic Regression**
+   * Evaluated using **accuracy score** and **confusion matrix**
+
+5. **Prediction**
+
+   * Evaluate on training and test data
+   * Predict custom messages (example included)
+
+---
+
+## ✅ Model Performance
+
+* **Training Accuracy**: 97%
+* **Testing Accuracy**: 96%
+
+> This indicates a well-generalized model with minimal overfitting.
+
+---
+
+## 🔍 Sample Prediction
+
+```python
+new_mail = ["Congratulations on your recent achievement! Well done."]
+prediction = model.predict(vectorizer.transform(new_mail))
+```
+
+Output:
+
+```
+Prediction: Ham Mail
+```
+
+---
+
+## 📉 Most Frequent Words in Spam
+
+A bar chart showcasing the **top 7 most common words** in spam emails (excluding stopwords) is also included to provide insight into typical spam content.
+
+---
+
+## 📁 File Structure
+
+```
+spam_email_classifier/
+├── spam.csv                # Dataset file (not included here for license reasons)
+├── spam_detector.py        # Main code file (your script)
+├── README.md               # Project documentation
+```
+
+---
+
+## 📌 Note
+
+* The dataset used should be placed in the path defined in `file_path` (you can modify it accordingly).
+* NLTK stopwords are downloaded at runtime using `nltk.download('stopwords')`.
+
+---
+
+## 🤝 Acknowledgements
+
+* Dataset Source: [UCI SMS Spam Collection Dataset](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
+* Inspired by classical NLP spam detection techniques.
 
