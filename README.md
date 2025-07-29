@@ -1,4 +1,4 @@
-# 📧 Spam Email Detection using Logistic Regression & TF-ID
+# 📧 Spam Email Detection using Logistic Regression & TF-IDE
 
 ## 🚀 Project Overview
 
