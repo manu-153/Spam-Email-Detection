@@ -1,6 +1,6 @@
 # 📧 Spam Email Detection using Logistic Regression & TF-IDE
 
-## 🚀 Project Overview wi
+## 🚀 Project Overview view
 
 This project focuses on detecting **spam emails** using **Logistic Regression** and **TF-IDF (Term Frequency-Inverse Document Frequency)** vectorization. It uses a labeled dataset of SMS messages and applies machine learning techniques to classify messages as either "Spam" or "Ham" (non-spam).
 
