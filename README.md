@@ -1,129 +1,100 @@
-# 📧 Spam Email Detection using Logistic Regression & TFIDE
+# 📧 Spam Email Detection — Logistic Regression & TF‑IDF
 
-## 🚀 Project Overview 
+## 🚀 Project Summary
+A compact NLP pipeline that classifies messages as spam or ham using TF‑IDF vectorization and a Logistic Regression classifier. The project demonstrates text preprocessing, feature extraction, model training, evaluation, and visualization — ideal for learning or quick prototyping.
 
 ## 🧠 Key Concepts
-
-* Natural Language Processing (NLP)
-* Text Preprocessing
-* TF-IDF Vectorization
-* Logistic Regression Classification
-* Data Visualization
-* Model Evaluation Metrics
+- Natural Language Processing (NLP)  
+- Text preprocessing (tokenization, stopword removal)  
+- TF‑IDF vectorization  
+- Logistic Regression classification  
+- Model evaluation (accuracy, confusion matrix)  
+- Data visualization
 
 ---
 
 ## 📂 Dataset
+- Source file: `spam.csv`  
+- Original columns:  
+  - `v1`: category (spam or ham)  
+  - `v2`: message text
 
-The dataset is a CSV file (`spam.csv`) which contains the following columns:
+- Processed/renamed columns used in this project:  
+  - `Category`: encoded as 0 = spam, 1 = ham  
+  - `Message`: raw message text
 
-* `v1`: Category (spam or ham)
-* `v2`: Message text
-
-Unnecessary columns are removed, and the relevant columns are renamed to:
-
-* `Category`: Converted to 0 (spam) and 1 (ham)
-* `Message`: The actual message content
-
----
-
-## 🛠️ Technologies Used
-
-* Python
-* Pandas & NumPy
-* Scikit-learn
-* NLTK (Stopwords)
-* Matplotlib & Seaborn (Visualizations)
+Unnecessary columns are removed and null values are handled during preprocessing.
 
 ---
 
-## 📊 Data Visualization
-
-* **Bar Chart**: Distribution of spam vs. ham messages
-* **Pie Chart**: Proportion of spam and ham messages
-* **Confusion Matrix**: Model performance visualization
-* **Top Words**: Most common words in spam messages (excluding stopwords)
+## 🛠️ Tech Stack
+- Python  
+- pandas, NumPy  
+- scikit-learn  
+- NLTK (stopwords)  
+- Matplotlib, Seaborn
 
 ---
 
-## 📈 Model Pipeline
+## 📊 Visualizations
+- Bar chart: distribution of spam vs. ham messages  
+- Pie chart: proportion of spam and ham  
+- Confusion matrix: classification performance  
+- Bar chart: top 7 most frequent words in spam (stopwords excluded)
 
-1. **Data Preprocessing**
+---
 
-   * Drop unnecessary columns
-   * Encode labels (`spam`: 0, `ham`: 1)
-   * Handle null values (if any)
+## 🧭 Model Pipeline
+1. Data preprocessing  
+   - Drop irrelevant columns  
+   - Encode labels (spam → 0, ham → 1)  
+   - Handle missing values  
+   - Basic text cleaning and stopword removal (NLTK)
 
-2. **Data Splitting**
+2. Train / test split using `train_test_split()`.
 
-   * Train-Test split using `train_test_split()`
+3. Vectorization  
+   - Convert text to numerical features with TF‑IDF.
 
-3. **Vectorization**
+4. Model training  
+   - Classifier: Logistic Regression  
+   - Evaluate with accuracy and confusion matrix
 
-   * Text transformed to numerical features using **TF-IDF**
-
-4. **Model Training**
-
-   * Classifier: **Logistic Regression**
-   * Evaluated using **accuracy score** and **confusion matrix**
-
-5. **Prediction**
-
-   * Evaluate on training and test data
-   * Predict custom messages (example included)
+5. Prediction  
+   - Evaluate on train and test sets  
+   - Support example/custom message prediction
 
 ---
 
 ## ✅ Model Performance
+- Training accuracy: 97%  
+- Testing accuracy: 96%
 
-* **Training Accuracy**: 97%
-* **Testing Accuracy**: 96%
-
-> This indicates a well-generalized model with minimal overfitting.
+This suggests good generalization with minimal overfitting on the provided dataset.
 
 ---
 
-## 🔍 Sample Prediction
-
+## 🔍 Example: Predicting a New Message
 ```python
+# assuming `vectorizer` and `model` are already trained
 new_mail = ["Congratulations on your recent achievement! Well done."]
-prediction = model.predict(vectorizer.transform(new_mail))
-```
+pred = model.predict(vectorizer.transform(new_mail))
+label = "Ham" if pred[0] == 1 else "Spam"
+print(f"Prediction: {label} Mail")
 
-Output:
+📉 Top Words in Spam
+A visualization is included that highlights the top 7 most common words in spam messages (after removing stopwords) to give quick insight into typical spam content.
 
-```
-Prediction: Ham Mail
-```
-
----
-
-## 📉 Most Frequent Words in Spam
-
-A bar chart showcasing the **top 7 most common words** in spam emails (excluding stopwords) is also included to provide insight into typical spam content.
-
----
-
-## 📁 File Structure
-
-```
+📁 Project Structure
 spam_email_classifier/
-├── spam.csv                # Dataset file (not included here for license reasons)
-├── spam_detector.py        # Main code file (your script)
+├── spam.csv                # Dataset (not included in this repo)
+├── spam_detector.py        # Main script
 ├── README.md               # Project documentation
-```
 
----
 
-## 📌 Note
+📌 Notes
 
-* The dataset used should be placed in the path defined in `file_path` (you can modify it accordingly).
-* NLTK stopwords are downloaded at runtime using `nltk.download('stopwords')`.
-
----
-
-## 🤝 Acknowledgements
-
-* Dataset Source: [UCI SMS Spam Collection Dataset](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
-* Inspired by classical NLP spam detection techniques.
-
+* Place the dataset at the path specified by the file_path variable (modify as needed).
+* NLTK stopwords are downloaded at runtime (nltk.download('stopwords')).
+* Install required packages (example):
+pip install pandas numpy scikit-learn nltk matplotlib seaborn
