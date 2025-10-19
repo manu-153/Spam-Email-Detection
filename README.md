@@ -1,9 +1,9 @@
-# 📧 Spam Email Detection — Logistic Regression & TF‑IDF
+#  Spam Email Detection — Logistic Regression & TF‑IDF
 
-## 🚀 Project Summary
+##  Project Summary
 A compact NLP pipeline that classifies messages as spam or ham using TF‑IDF vectorization and a Logistic Regression classifier. The project demonstrates text preprocessing, feature extraction, model training, evaluation, and visualization — ideal for learning or quick prototyping.
 
-## 🧠 Key Concepts
+##  Key Concepts
 - Natural Language Processing (NLP)  
 - Text preprocessing (tokenization, stopword removal)  
 - TF‑IDF vectorization  
@@ -13,7 +13,7 @@ A compact NLP pipeline that classifies messages as spam or ham using TF‑IDF ve
 
 ---
 
-## 📂 Dataset
+##  Dataset
 - Source file: `spam.csv`  
 - Original columns:  
   - `v1`: category (spam or ham)  
