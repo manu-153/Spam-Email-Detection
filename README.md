@@ -27,7 +27,7 @@ Unnecessary columns are removed and null values are handled during preprocessing
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Python  
 - pandas, NumPy  
 - scikit-learn  
@@ -36,7 +36,7 @@ Unnecessary columns are removed and null values are handled during preprocessing
 
 ---
 
-## 📊 Visualizations
+## Visualizations
 - Bar chart: distribution of spam vs. ham messages  
 - Pie chart: proportion of spam and ham  
 - Confusion matrix: classification performance  
