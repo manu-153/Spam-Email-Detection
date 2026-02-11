@@ -74,7 +74,7 @@ This suggests good generalization with minimal overfitting on the provided datas
 
 ---
 
-## 🔍 Example: Predicting a New Message
+## Example: Predicting a New Message
 ```python
 # assuming `vectorizer` and `model` are already trained
 new_mail = ["Congratulations on your recent achievement! Well done."]
@@ -82,17 +82,17 @@ pred = model.predict(vectorizer.transform(new_mail))
 label = "Ham" if pred[0] == 1 else "Spam"
 print(f"Prediction: {label} Mail")
 
-📉 Top Words in Spam
+Top Words in Spam
 A visualization is included that highlights the top 7 most common words in spam messages (after removing stopwords) to give quick insight into typical spam content.
 
-📁 Project Structure
+Project Structure
 spam_email_classifier/
 ├── spam.csv                # Dataset (not included in this repo)
 ├── spam_detector.py        # Main script
 ├── README.md               # Project documentation
 
 
-📌 Notes
+Notes
 
 * Place the dataset at the path specified by the file_path variable (modify as needed).
 * NLTK stopwords are downloaded at runtime (nltk.download('stopwords')).
