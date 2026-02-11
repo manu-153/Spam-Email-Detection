@@ -44,7 +44,7 @@ Unnecessary columns are removed and null values are handled during preprocessing
 
 ---
 
-## 🧭 Model Pipeline
+## Model Pipeline
 1. Data preprocessing  
    - Drop irrelevant columns  
    - Encode labels (spam → 0, ham → 1)  
@@ -66,7 +66,7 @@ Unnecessary columns are removed and null values are handled during preprocessing
 
 ---
 
-## ✅ Model Performance
+## Model Performance
 - Training accuracy: 97%  
 - Testing accuracy: 96%
 
