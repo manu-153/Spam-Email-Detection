@@ -3,6 +3,8 @@
 ##  Project overview
 A compact NLP pipeline that classifies messages as spam or ham using TF‑IDF vectorization and a Logistic Regression classifier. The project demonstrates text preprocessing, feature extraction, model training, evaluation, and visualization — ideal for learning or quick prototyping.
 
+---
+
 ##  Key Concepts
 - Natural Language Processing (NLP)  
 - Text preprocessing (tokenization, stopword removal)  
