@@ -14,7 +14,7 @@
 
 ---
 
-##  Dataset
+##  project Dataset
 - Source file: `spam.csv`  
 - Original columns:  
   - `v1`: category (spam or ham)  
