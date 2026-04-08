@@ -1,4 +1,4 @@
-#  Spam Email Detection — Logistic Regression & TF‑IDF
+#  Spam Email Detection — Logistic Regression
 
 ##  Project Overview 
 
